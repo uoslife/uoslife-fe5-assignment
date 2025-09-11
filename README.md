@@ -1,69 +1,63 @@
-# React + TypeScript + Vite
+# 📚 UOSLIFE FE 5기 과제
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+이 레포지토리는 **프론트엔드 5기 과제**를 위한 저장소이며,
+총 **2주차 분량의 과제**가 포함되어 있습니다.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 1주차 과제
 
-## Expanding the ESLint configuration
+- 기본기를 다져보는 과제입니다! 
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 1️⃣ 튼튼한 기본, 퍼블리싱 🏗️
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+간단한 퍼블리싱이지만 탄탄한 기본기를 위해서 꼭 필요한 과제입니다. 
+Emotion과 ThemeProvider를 활용하여 스타일을 적용하고,  
+시멘틱 태그 사용에 신경쓰며 다양한 UI 컴포넌트를 구현하는 과제입니다.  
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### 주요 구현 요소
+- 헤더 (로고, 메뉴, 아이콘 / 투명 배경 / fixed)
+- 홈 배너 (배경 이미지 + 우측 문구/버튼)
+- 무한 배너 (끊기지 않고 슬라이드 / hover 시 확대)
+- 가로 스크롤 뷰 (화살표 이동, 동일한 크기 유지)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 2️⃣ 상태관리 잘해보자! 간단한 게임 만들기
+
+숫자를 순서대로 클릭하는 게임을 구현하는 과제입니다.  
+전역 상태 라이브러리를 사용하지 않고, React 상태만으로 관리합니다.  
+
+### 주요 구현 요소
+- 레벨별 게임판 (3x3, 4x4, 5x5)
+- 랜덤 숫자 배치 및 점진적 공개
+- 타이머 및 클릭 검증
+- 게임 종료 시 Modal (createPortal 활용)
+- localStorage 기반 랭킹 관리 및 정렬
+
+---
+
+## 🚀 시작하기
+
+이 저장소를 클론(clone)한 후 실행하면 됩니다.
+
+```bash
+git clone https://github.com/your-repo-link.git
+cd your-repo
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📌 과제 제출 방법
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. 과제 제출 시에는 **하위 브랜치**를 생성하여 작업 후, **Pull Request(PR)** 로 제출해주세요.  
+2. PR 작성 시에는 다음 내용을 포함해야 합니다.
+   - 기능 명세서에서 구현한 부분을 체크 표시
+   - 구현 도중 어려웠던 부분
+   - 새로 알게 된 부분 
+   - 최종 구현 영상 및 스크린샷
+3. 제출 후에는 서로 코드리뷰를 진행합니다.
+   - PR 당 **5개 이상의 리뷰**를 남겨주세요.
+   - 코드에서 좋았던 점 , 개선하면 좋을 부분 등을 함께 논의합니다.
