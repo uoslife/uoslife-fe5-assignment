@@ -1,5 +1,7 @@
 # 📚 UOSLIFE FE 5기 과제
 
+[과제 진행 notion](https://quark-dianella-5e6.notion.site/FE-OnBoarding-2688a514965e8177a5b2fa0c30e5b55b?source=copy_link)
+
 이 레포지토리는 **프론트엔드 5기 과제**를 위한 저장소이며,
 총 **2주차 분량의 과제**가 포함되어 있습니다.
 
