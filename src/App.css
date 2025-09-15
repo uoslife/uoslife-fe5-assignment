@@ -1,9 +1,4 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+
 
 .logo {
   height: 6em;
@@ -34,9 +29,121 @@
 }
 
 .card {
-  padding: 2em;
+  text-align: left;
 }
 
 .read-the-docs {
   color: #888;
+}
+
+
+
+#background{
+  background-size: cover;
+  padding:0;
+  width:100%;
+  z-index: -1;
+
+}
+
+.github{
+  width:55px;
+  height:5px;
+
+}
+
+.title{
+
+  margin:0;
+  font-weight: 800;
+
+}
+
+main{
+  
+  color: rgb(255, 255, 255);
+  background-color: rgb(41, 41, 41);
+}
+
+.topcontent{
+  position: relative;
+
+}
+
+#top-text{
+  
+  position: absolute;
+  right:10px;
+  bottom:100px;
+  z-index: 1;
+  padding: 0px;
+  border: 0px;
+  font-weight: 800;
+  color: rgb(255, 255, 255);
+
+}
+
+#top-link{
+  position: absolute;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  z-index: 3;
+  right:10px;
+  bottom:30px;
+  border-radius: 15px;
+  border: 0px;
+  padding: 10px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+#top-link:hover {
+  background-color: #2980b9;
+  transform: translateY(-3px); /* 버튼이 살짝 위로 이동 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+  transition: all 0.3s ease;
+
+}
+
+header {
+  padding-top: 50px;
+  padding-right: 0px;
+  position:fixed;
+  top:0;
+  font-size: 30px;
+  color: white;
+  width: 100%;
+  display: flex;
+
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 10; /* 다른 요소보다 높게 설정 */
+
+}
+
+
+.left_menu{
+  padding-left: 100px;
+  list-style: none;
+  gap:100px;
+  display: flex;
+  align-items: center; 
+  margin:0;
+}
+
+.right_menu{
+  padding-right: 50px;
+  list-style: none;
+  gap:30px;
+  
+  font-size: 20px;
+  display: flex;
+  margin:0;
+
+}
+
+h1{
+
+  
+margin:0;
 }
