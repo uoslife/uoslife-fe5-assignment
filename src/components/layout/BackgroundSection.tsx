@@ -31,7 +31,7 @@ const OverlayText = styled.p`
     margin: 0;
 `;
 
-const ToolbarContainer = styled.div`
+const ToolbarContainer = styled.a`
     position: absolute;
     bottom: 20px;
     right: 0px;
@@ -44,6 +44,7 @@ const ToolbarContainer = styled.div`
     width: fit-content;
     opacity: 0.7;
     cursor: pointer;
+    text-decoration: none; // 링크 밑줄 제거
     transition: all 0.2s ease;
     
     &:hover {
@@ -63,7 +64,7 @@ const ToolbarIcon = styled.span`
     font-size: 14px;
 `;
 
-const ToolbarText = styled.span`
+const ToolbarText = styled.a`
     color: ${({ theme }) => theme.colors.text};
     font-size: ${({ theme }) => theme.fontSize.sm};
     font-weight: ${({ theme }) => theme.fontWeight.medium};
@@ -75,7 +76,11 @@ function BackgroundSection() {
         <BackgroundImage>
             <OverlayContent>
                 <OverlayText>시대생 프론트 아자아자🌊</OverlayText>
-                <ToolbarContainer>
+                <ToolbarContainer
+                    href="https://github.com/uoslife/client"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <ToolbarIcon>↗</ToolbarIcon>
                     <ToolbarText>바로가기</ToolbarText>
                 </ToolbarContainer>
