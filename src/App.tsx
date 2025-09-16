@@ -1,23 +1,19 @@
-import { useState } from 'react'
-import Logo from './assets/app_icon.png'
+import Header from './components/layout/Header'
+import Footer from './components/layout/Footer'
 import './App.css'
+import backgroundImage from './assets/background.jpg'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-          <img src={Logo} className="logo" alt="app logo" />
+      <Header/>
+      <div className="background-banner">
+        <img src={backgroundImage} alt="Background" />
       </div>
-      <h1>5기 프론트 시대생 onboarding ✈️</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
+      <Footer/>
     </>
   )
 }
 
-export default App
+export default App;
