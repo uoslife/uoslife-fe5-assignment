@@ -261,7 +261,10 @@ function App() {
       {mode === 1 && (
         <div className='ranking'>
           <p>랭킹</p>
-          <button className='init' onClick={()=>localStorage.clear()}>초기화</button>
+          <button className='init' onClick={() => {
+            localStorage.clear();
+            setResults([]);
+          }}>초기화</button>
           <table className="ranktable">
             <tbody>
               <tr style={{backgroundColor:'rgb(188, 188, 245)'}}>
