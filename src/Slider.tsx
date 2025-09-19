@@ -1,5 +1,6 @@
+/** @jsxImportSource @emotion/react */
 import { useEffect, useRef } from 'react';
-import './Slider.css';
+import { getThemeStyle } from './theme';
 
 const images: string[] = ['pocketmon/Charmander.png', 'pocketmon/Charmeleon.png', 'pocketmon/Charizard.png', 'pocketmon/Mega_Charizard_X.png', 'pocketmon/Mega_Charizard_Y.png'];
 
@@ -36,11 +37,11 @@ function Slider() {
   const repeatedImages: string[] = [...images, ...images];
 
   return (
-    <div className="slider-container">
-      <div className="slider-track" ref={sliderRef}>
+    <div css = {getThemeStyle('slidercontainer')}>
+      <div css = {getThemeStyle('slidertrack')} ref={sliderRef}>
         {repeatedImages.map((img, index) => (
-          <div className="slider-item" key={index}>
-            <img src={img} alt={`slide-${index}`} />
+          <div css = {getThemeStyle('slideritem')} key={index}>
+            <img css = {getThemeStyle('sliderimg')} src={img} alt={`slide-${index}`} />
           </div>
         ))}
       </div>

@@ -1,12 +1,15 @@
+/** @jsxImportSource @emotion/react */
+import { getThemeStyle } from './theme';
+
 function Header() {
 
 
 
   return (
     <header className='banner' >
-      <ul className='left_menu'>
+      <ul css = {getThemeStyle('leftmenu')}>
         <li>
-          <a href="/"><p className='title'>UOSLIFE FE</p></a>
+          <a href="/"><p css = {getThemeStyle('title')}>UOSLIFE FE</p></a>
         </li>
         <li>
           <a>메뉴1</a>
@@ -18,7 +21,7 @@ function Header() {
           <a>메뉴3</a>
         </li>
       </ul>
-      <ul className='right_menu'>
+      <ul css = {getThemeStyle('rightmenu')}>
         <li>
           <a href="https://github.com/"><img src="github.png" width={50} height={50}/></a>
         </li>

@@ -1,14 +1,12 @@
-import { ThemeProvider } from '@emotion/react';
-import { theme } from './theme';
+/** @jsxImportSource @emotion/react */
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
+import GlobalStyles from './GlobalStyles';
 import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <ThemeProvider theme={theme}>
+  <StrictMode >
+    <GlobalStyles />
       <App />
-    </ThemeProvider>
   </StrictMode>,
 )
