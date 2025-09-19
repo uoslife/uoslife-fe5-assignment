@@ -11,6 +11,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
 }
 
 a {
@@ -26,8 +27,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+
 }
 
 h1 {
@@ -36,6 +36,7 @@ h1 {
 }
 
 button {
+  
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -49,10 +50,7 @@ button {
 button:hover {
   border-color: #646cff;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -65,4 +63,12 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.clicked-once {
+  background-color: lightblue;
+}
+
+.clicked-twice {
+  background-color: rgb(255, 255, 255);
 }
