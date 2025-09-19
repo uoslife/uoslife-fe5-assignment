@@ -3,7 +3,7 @@ import backgroundImage from '../../assets/background3.png';
 
 const BackgroundImage = styled.div`
     width: 100%;
-    height: 500px;
+    height: 700px;
     position: relative;
     background-image: url(${backgroundImage});
     background-size: cover;
@@ -44,7 +44,7 @@ const ToolbarContainer = styled.a`
     width: fit-content;
     opacity: 0.7;
     cursor: pointer;
-    text-decoration: none; // 링크 밑줄 제거
+    text-decoration: none;
     transition: all 0.2s ease;
     
     &:hover {

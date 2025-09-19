@@ -75,7 +75,7 @@ export const theme = {
         lg: '1.5rem',   // 24px
         xl: '2rem',     // 32px
         xxl: '2.5rem',  // 40px
-        bar: '6rem'     // 64px
+        bar: '10rem'     // 160px
     },
     borderRadius: {
         sm: '0.25rem',  // 4px

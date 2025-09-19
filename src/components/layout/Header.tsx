@@ -83,8 +83,8 @@ export default function Header() {
                 <HeaderLogo href="/">UOSLIFE FE</HeaderLogo>
                 <HeaderNav>
                     <a href="#">홈</a>
-                    <a href="#">메뉴1</a>
-                    <a href="#">메뉴2</a>
+                    <a href="#carousel-section">메뉴1</a>
+                    <a href="#slider-section">메뉴2</a>
                 </HeaderNav>
             </HeaderLeft>
 

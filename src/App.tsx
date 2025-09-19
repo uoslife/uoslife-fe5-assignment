@@ -15,15 +15,15 @@ const PageContainer = styled.div`
 
 const ContentSection = styled.section`
     flex: 1;
-    padding: ${({ theme }) => theme.spacing.xl} 0;
+    padding: ${({ theme }) => theme.spacing.xxl} ${({ theme }) => theme.spacing.xl};
 `;
 
 const CarouselSection = styled.div`
-    margin-bottom: ${({ theme }) => theme.spacing.xl};
+    margin-bottom: ${({ theme }) => theme.spacing.xxl};
 `;
 
 const SliderSection = styled.div`
-    margin-bottom: ${({ theme }) => theme.spacing.xl};
+    margin-bottom: ${({ theme }) => theme.spacing.xxl};
 `;
 
 function App() {
@@ -33,10 +33,10 @@ function App() {
                 <Header/>
                 <BackgroundSection/>
                 <ContentSection>
-                    <CarouselSection>
+                    <CarouselSection id="carousel-section">
                         <ImageCarousel/>
                     </CarouselSection>
-                    <SliderSection>
+                    <SliderSection id="slider-section">
                         <ImageSlider/>
                     </SliderSection>
                 </ContentSection>
