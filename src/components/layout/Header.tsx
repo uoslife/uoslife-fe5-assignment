@@ -25,7 +25,7 @@ const Title = styled.a`
 const NavBar = styled.nav`
     display: flex;
     flex-direction: row;
-    gap: ${({ theme }) => theme.spacing.xxxl};
+    gap: ${({ theme }) => theme.spacing.lg};
 `;
 
 const NavItem = styled(NavLink)`
