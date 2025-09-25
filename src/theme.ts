@@ -3,6 +3,10 @@ import '@emotion/react'
 declare module '@emotion/react' {
     export interface Theme {
         colors: {
+            header: string
+            body: string
+            button: string
+            hover: string
             text: string
             subText: string
             footerBackground: string
@@ -33,6 +37,7 @@ declare module '@emotion/react' {
             lg: string
             xl: string
             xxl: string
+            xxxl: string
             bar: string
         }
         borderRadius: {
@@ -45,6 +50,9 @@ declare module '@emotion/react' {
 
 export const theme = {
     colors: {
+        header: '#3b73b5',
+        body: '#cdbefb',
+        button: '#112e4f',
         text: '#FFFFFF',
         subText: '#212121',
         footerBackground: "#36454F",
@@ -75,7 +83,8 @@ export const theme = {
         lg: '1.5rem',   // 24px
         xl: '2rem',     // 32px
         xxl: '2.5rem',  // 40px
-        bar: '10rem'     // 160px
+        xxxl: '3rem',
+        bar: '5rem',   // 160px
     },
     borderRadius: {
         sm: '0.25rem',  // 4px
