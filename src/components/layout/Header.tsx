@@ -1,16 +1,21 @@
 import { NavLink } from 'react-router-dom';
 import styled from '@emotion/styled';
 
+interface HeaderProps {
+    children?: React.ReactNode;
+}
+
 const Container = styled.header`
     display: flex;
     flex-direction: row;
     align-items: center;
     background-color: ${({ theme }) => theme.colors.header};
-    gap: ${({ theme }) => theme.spacing.xxxl};
     height: ${({ theme }) => theme.spacing.bar};
+    padding: 0 ${({ theme }) => theme.spacing.xxxl};
 `;
 
 const Title = styled.a`
+    margin-right: ${({ theme }) => theme.spacing.xxxl};
     margin-left: ${({ theme }) => theme.spacing.xxxl};
     color: ${({ theme }) => theme.colors.text};
     font-weight: ${({ theme }) => theme.fontWeight.bold};
@@ -35,7 +40,13 @@ const NavItem = styled(NavLink)`
         background-color: ${({ theme }) => theme.colors.button};
     }
 `
-export default function Header() {
+const ChildrenWrapper = styled.div`
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+`;
+
+export default function Header({ children }: HeaderProps) {
     return(
         <Container>
             <Title>1 to 50</Title>
@@ -43,6 +54,7 @@ export default function Header() {
                 <NavItem to="">게임🎰</NavItem>
                 <NavItem to="/rank">랭킹🏆</NavItem>
             </NavBar>
+            <ChildrenWrapper>{children}</ChildrenWrapper>
         </Container>
     )
 }
