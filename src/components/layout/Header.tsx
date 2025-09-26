@@ -12,6 +12,7 @@ const Container = styled.header`
     background-color: ${({ theme }) => theme.colors.header};
     height: ${({ theme }) => theme.spacing.bar};
     padding: 0 ${({ theme }) => theme.spacing.xxxl};
+    margin-bottom: ${({ theme }) => theme.spacing.xxl};
 `;
 
 const Title = styled.a`
