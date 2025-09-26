@@ -1,5 +1,10 @@
+import { useLevel } from "../../../hook/use-level";
+import Game from "../components/Game";
+
 export default function GamePage() {
+    const { level } = useLevel();
+
     return(
-        <h1>게임 페이지</h1>
-    )
+        <Game level={level} />
+    );
 }
