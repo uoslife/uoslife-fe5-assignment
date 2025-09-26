@@ -6,6 +6,7 @@ declare module '@emotion/react' {
             header: string
             body: string
             button: string
+            card: string
             hover: string
             text: string
             subText: string
@@ -53,6 +54,7 @@ export const theme = {
         header: '#3b73b5',
         body: '#cdbefb',
         button: '#112e4f',
+        card: '#3766a4',
         text: '#FFFFFF',
         subText: '#212121',
         footerBackground: "#36454F",
