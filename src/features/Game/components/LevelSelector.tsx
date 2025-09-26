@@ -1,5 +1,5 @@
 import DropDown from "../../../components/atom/drop-down";
-import { LEVEL_OPTIONS } from '../../../utils/options';
+import { LEVEL_OPTIONS } from '../utils/options';
 import { useLevel } from "../../../hook/use-level";
 
 export default function LevelSelector() {

@@ -5,7 +5,8 @@ export const LEVEL_OPTIONS = [
 ];
 
 export const CARD_COUNTS: Record<typeof LEVEL_OPTIONS[number], number> = {
-    'Level1 🥸': 6,
-    'Level2 😐': 12,
-    'Level3 🥵': 18
+    // Grid sizes: 3x3, 4x4, 5x5
+    'Level1 🥸': 9,
+    'Level2 😐': 16,
+    'Level3 🥵': 25
 };
