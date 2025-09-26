@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { useMemo, useState, createContext, useContext } from 'react';
 import type { ReactNode } from 'react';
-import { LEVEL_OPTIONS } from '../utils/options';
+import { LEVEL_OPTIONS } from '../features/Game/utils/options';
 
 interface LevelContextValue {
     level: string;
