@@ -60,7 +60,7 @@ function Header() {
 
   // 2. map을 사용해 배열의 각 항목을 원하는 객체 형태로 변환합니다.
   const rightMenu = services.map(service => ({
-    image: <Iimage src={`${service}.png`} />,
+    image: <Iimage src={`${service}.png`} alt ={service} />,
     href: `https://www.${service}.com/`,
   }));
 
