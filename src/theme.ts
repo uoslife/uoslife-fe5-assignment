@@ -2,58 +2,10 @@ import { css } from '@emotion/react';
 
 import type { SerializedStyles } from '@emotion/react';
 
-type ThemeKey = 'scrollcontainer' | 'scrollbutton' | 'default' | 'scrollview' | 'scrollitem' | 'scrollimg' | 'slidercontainer' | 'slidertrack' | 'slideritem' | 'sliderimg' | 'topcontent' | 'background' | 'toptext' | 'toplink' |  'logo';
+type ThemeKey = 'scrollcontainer' | 'scrollbutton' | 'default' | 'scrollview' | 'scrollitem' | 'scrollimg' | 'slidercontainer' | 'slidertrack' | 'slideritem' | 'sliderimg' ;
 
 export const themeStyles: Record<ThemeKey, SerializedStyles> = {
 
-  background: css`
-  background-size: cover;
-  padding:0;
-  width:100%;
-  z-index: -1;
-  `,
-  logo: css`
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-
-        &:hover {
-      filter: drop-shadow(0 0 2em #646cffaa);
-  }
-
-  `,
-
-  toptext:css`
-    position: absolute;
-    right:10px;
-    bottom:100px;
-    z-index: 1;
-    padding: 0px;
-    border: 0px;
-    font-weight: 800;
-    color: rgb(255, 255, 255);
-  `,
-  toplink:css`
-    position: absolute;
-    color: rgb(255, 255, 255);
-    background-color: rgb(0, 0, 0);
-    z-index: 3;
-    right:10px;
-    bottom:30px;
-    border-radius: 15px;
-    border: 0px;
-    padding: 10px;
-    padding-left: 100px;
-    padding-right: 100px;
-
-    &:hover {
-      background-color: #2980b9;
-  transform: translateY(-3px); /* 버튼이 살짝 위로 이동 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
-  transition: all 0.3s ease;
-}
-  `,  
   scrollcontainer: css`
     display: flex;
     align-items: center;
@@ -124,9 +76,6 @@ export const themeStyles: Record<ThemeKey, SerializedStyles> = {
     transform: scale(1.1);
   }
 
-  `,
-  topcontent:css`
-    position: relative;
   `,
 
 

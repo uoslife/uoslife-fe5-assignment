@@ -27,10 +27,6 @@ const GlobalStyles: React.FC = () => (
       a:hover {
         color: #535bf2;
       }
-      main {
-        color: rgb(255, 255, 255);
-        background-color: rgb(41, 41, 41);
-      }
       body {
         margin: 0;
         width: 100%;
