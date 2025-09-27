@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { useEffect, useRef } from "react";
-import { getThemeStyle } from "./theme";
 import styled from "@emotion/styled";
 
 const images: string[] = [

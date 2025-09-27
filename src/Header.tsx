@@ -1,16 +1,16 @@
 /** @jsxImportSource @emotion/react */
 import styled from "@emotion/styled";
 
+
 const StyledHeader = styled.head`
   padding-top: 50px;
   padding-right: 0px;
   position: fixed;
   top: 0;
-  font-size: 30px;
-  color: white;
+  font-size: ${props => props.theme.fontSize.xxl};
+  color: ${props => props.theme.colors.whitetext};
   width: 100%;
   display: flex;
-
   flex-direction: row;
   justify-content: space-between;
   z-index: 10;
@@ -27,19 +27,19 @@ const Rightmenu = styled.ul`
   padding-right: 50px;
   list-style: none;
   gap: 30px;
-  font-size: 20px;
+  font-size: ${props => props.theme.fontSize.lg};
   display: flex;
   margin: 0;
 `;
 
 const Title = styled.p`
   margin: 0;
-  font-weight: 800;
+  font-weight: ${props => props.theme.fontWeight.bold};
 `;
 
 const LButton = styled.a`
-  font-weight: 500;
-  color: #ffffff;
+  font-weight: ${props => props.theme.fontWeight.medium};
+  color :${props => props.theme.colors.whitetext};
 `;
 
 const Iimage = styled.img`
@@ -78,7 +78,9 @@ function Header() {
       <Rightmenu>
         {rightMenu.map((item, index) => (
           <li key={index}>
-            <a href={item.href}>{item.image}</a>
+            <a href={item.href} target="_blank">
+              {item.image}
+            </a>
           </li>
         ))}
       </Rightmenu>

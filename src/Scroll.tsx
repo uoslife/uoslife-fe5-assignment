@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
 import { useRef } from "react";
-import { getThemeStyle } from "./theme";
 import styled from "@emotion/styled";
 
 const images = [
@@ -25,8 +24,8 @@ const Scrollcontainer = styled.div`
   height: 300px;
 `;
 const Scrollbutton = styled.button`
-  font-size: 2rem;
-  background: wheat;
+  font-size: ${props => props.theme.fontSize.xxl};
+  background: ${props => props.theme.backgroundcolors.scrollbutton};
   border: none;
   cursor: pointer;
   user-select: none;
@@ -42,7 +41,7 @@ const Scrollitem = styled.div`
   height: 300px; /* 정사각형 세로 크기 */
   overflow: hidden; /* 이미지가 넘치면 잘라냄 */
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px ${props => props.theme.colors.whitetext};
 `;
 
 const Scrollimg = styled.img`
