@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-    <header><Header></Header></header>
+    <Header></Header>
     <main>
       <article css = {getThemeStyle('topcontent')}>
         <img src="./sky_img.png" css = {getThemeStyle('background')} draggable="false"/>
@@ -32,9 +32,9 @@ function App() {
 
       <section style={{ textAlign: 'left' }}>
         <h1>무한배너 section</h1>
-        <Slider></Slider>
+        <Slider/>
         <h1>스크롤뷰 zone</h1>
-        <Scroll></Scroll>
+        <Scroll/>
       </section>
     </main>  
     </>
