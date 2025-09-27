@@ -2,13 +2,10 @@ import { css } from '@emotion/react';
 
 import type { SerializedStyles } from '@emotion/react';
 
-type ThemeKey = 'scrollcontainer' | 'scrollbutton' | 'default' | 'scrollview' | 'scrollitem' | 'scrollimg' | 'slidercontainer' | 'slidertrack' | 'slideritem' | 'sliderimg' | 'topcontent' | 'background' | 'toptext' | 'toplink' | 'leftmenu' | 'rightmenu' | 'logo' | 'title';
+type ThemeKey = 'scrollcontainer' | 'scrollbutton' | 'default' | 'scrollview' | 'scrollitem' | 'scrollimg' | 'slidercontainer' | 'slidertrack' | 'slideritem' | 'sliderimg' | 'topcontent' | 'background' | 'toptext' | 'toplink' |  'logo';
 
 export const themeStyles: Record<ThemeKey, SerializedStyles> = {
-  title: css`
-    margin:0;
-    font-weight: 800;
-  `,
+
   background: css`
   background-size: cover;
   padding:0;
@@ -26,23 +23,7 @@ export const themeStyles: Record<ThemeKey, SerializedStyles> = {
   }
 
   `,
-  leftmenu: css`
-    padding-left: 100px;
-    list-style: none;
-    gap:100px;
-    display: flex;
-    align-items: center; 
-    margin:0;
-  `,
-  rightmenu: css`
-    padding-right: 50px;
-    list-style: none;
-    gap:30px;
-    
-    font-size: 20px;
-    display: flex;
-    margin:0;
-  `,
+
   toptext:css`
     position: absolute;
     right:10px;

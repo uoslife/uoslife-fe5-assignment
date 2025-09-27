@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import { Global, css } from '@emotion/react';
-import React from 'react';
+import { Global, css } from "@emotion/react";
+import React from "react";
 
 const GlobalStyles: React.FC = () => (
   <Global
@@ -12,96 +12,68 @@ const GlobalStyles: React.FC = () => (
         width: 100%;
         height: 100vh;
         padding: 0;
-
         color-scheme: light dark;
         color: rgba(255, 255, 255, 0.87);
         background-color: #242424;
-
         font-synthesis: none;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-
         text-align: center;
       }
-a {
-  font-weight: 500;
-  color: #ffffff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-header {
-  padding-top: 50px;
-  padding-right: 0px;
-  position:fixed;
-  top:0;
-  font-size: 30px;
-  color: white;
-  width: 100%;
-  display: flex;
+      a {
+        text-decoration: inherit;
+      }
+      a:hover {
+        color: #535bf2;
+      }
+      main {
+        color: rgb(255, 255, 255);
+        background-color: rgb(41, 41, 41);
+      }
+      body {
+        margin: 0;
+        width: 100%;
+        min-height: 100vh;
+        box-sizing: inherit;
+        line-height: 1;
+      }
+      h1 {
+        margin: 0;
+        font-size: 3.2em;
+        line-height: 1.1;
+      }
+      button {
+        border-radius: 8px;
+        border: 1px solid transparent;
+        padding: 0.6em 1.2em;
+        font-size: 1em;
+        font-weight: 500;
+        font-family: inherit;
+        background-color: #1a1a1a;
+        cursor: pointer;
+        transition: border-color 0.25s;
+      }
+      button:hover {
+        border-color: #646cff;
+      }
+      button:focus,
+      button:focus-visible {
+        outline: 4px auto -webkit-focus-ring-color;
+      }
 
-  flex-direction: row;
-  justify-content: space-between;
-  z-index: 10; /* 다른 요소보다 높게 설정 */
-
-}
-  main{
-  
-  color: rgb(255, 255, 255);
-  background-color: rgb(41, 41, 41);
-}
-  h1{
-margin:0;
-}
-body {
-  
-  margin:0;
-  width:100%;
-  min-height: 100vh;
-  box-sizing: border-box;
-  box-sizing: inherit;
-  line-height: 1;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
+      @media (prefers-color-scheme: light) {
+        :root {
+          color: #213547;
+          background-color: #ffffff;
+        }
+        a:hover {
+          color: #747bff;
+        }
+        button {
+          background-color: #f9f9f9;
+        }
+      }
     `}
   />
 );
