@@ -1,11 +1,11 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
 
-createRoot(document.getElementById('root')!).render(
+import AppWrapper from "./AppWrapper.tsx";
+
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
-    <div id="modal-root"></div>
-  </StrictMode>,
-)
+    <AppWrapper />
+  </StrictMode>
+);

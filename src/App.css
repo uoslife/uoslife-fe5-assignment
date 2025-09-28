@@ -4,87 +4,15 @@
 }
 
 
-header{
-  background-color: rgb(177, 198, 255);
-  border: 0;
-  padding: 0;
-  height: 10%;
-  width: 100%;
-  display: flex;
-}
-
-.leftmenu{
-  list-style: none;
-  display: flex;
-  gap:30px;
-  align-items: center;
-  
-}
-
-.rightmenu{
-  list-style: none;
-  margin-left: auto;
-  display: flex;
-  gap:30px;
-  padding-right: 30px;
-  align-items: center;
-}
-
-table{
-  border-collapse: separate; /* 꼭 써야함! */
-  border-spacing: 10px 10px;  /* 가로 10px, 세로 5px 간격 */
-  margin: auto;
-  width: 700px;
-  height: 700px;
-  text-align: center;
- table-layout: fixed;
-  
-}
-
-
-td button, th button {
-  flex:1;
-  border: 1px solid black; /* 각 셀 테두리 */
-  text-align: center;
-  padding: 0;
-  margin:0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(188, 188, 245);
-  transition: all 0.1s ease-in-out;
-}
-
-
 button:active {
   background-color: aliceblue; /* 투명도를 줘서 깜빡이는 느낌 */
 
 
 }
 
-.init {
-  top:0%;
-  right:10%;
-  position: absolute;
-}
-
-.ranking{
-  position:relative;
-}
-
-.ranktable{
-  margin-top: 10%;
-  padding: 100px;;
-  border-collapse:collapse; /* 꼭 써야함! */
-  border-spacing: 10px 10px;
-
-}
 
 .ranktable th, .ranktable td{
   border: 1px solid black; /* 모든 셀에 1px 검은색 실선 적용 */
   padding: 8px;
 }
 
-.time {
-
-  min-width: 200px;
-}
