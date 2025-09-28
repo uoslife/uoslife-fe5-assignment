@@ -15,26 +15,16 @@ const StyledHeader = styled.header`
 `;
 // --- Header Props ---
 interface HeaderProps {
-  setResults: (results: any[]) => void;
-  seconds: number;
-  handleChangeLv: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
 // --- Header Component ---
-const Header: React.FC<HeaderProps> = ({
-  setResults,
-  seconds,
-  handleChangeLv,
-}) => {
+const Header: React.FC<HeaderProps> = () => {
   const { mode } = useContext(UserContext);
   return (
     <StyledHeader>
-      <LeftMenu setResults={setResults} />
+      <LeftMenu />
       {mode === 0 && (
-        <RightMenu
-          seconds={seconds}
-          handleChangeLv={handleChangeLv}
-        />
+        <RightMenu/>
       )}
     </StyledHeader>
   );

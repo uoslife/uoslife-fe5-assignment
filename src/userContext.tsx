@@ -15,6 +15,8 @@ const UserContext = React.createContext<{
     setLevel: React.Dispatch<React.SetStateAction<string>>;
     result: GameData[];
     setResults: React.Dispatch<React.SetStateAction<GameData[]>>;
+    seconds: number;
+    setSeconds: React.Dispatch<React.SetStateAction<number>>;
 }>({
     mode: 0,
     setMode: () => {},
@@ -22,6 +24,8 @@ const UserContext = React.createContext<{
     setLevel: () =>{},
     result: [],
     setResults: () =>{},
+    seconds: 0,
+    setSeconds: () =>{},
 });
 
 export default UserContext;

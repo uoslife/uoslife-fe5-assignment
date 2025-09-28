@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import App from './App';
-import UserContext from './userContext';
+import React, { useState } from "react";
+import App from "./App";
+import UserContext from "./userContext";
+import GlobalStyles from "./globalStyle";
 
 interface GameData {
   time: string;
@@ -16,26 +17,34 @@ interface ContextValue {
   setLevel: React.Dispatch<React.SetStateAction<string>>;
   result: GameData[];
   setResults: React.Dispatch<React.SetStateAction<GameData[]>>;
+  seconds: number;
+  setSeconds: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const AppWrapper: React.FC = () => {
+  const [seconds, setSeconds] = useState(0);
   const [mode, setMode] = useState<number>(0);
   const [level, setLevel] = useState<string>("Lv1");
-  const [result, setResults] = useState<GameData[]>([]);
+  const [result, setResults] = useState<GameData[]>(
+    JSON.parse(localStorage.getItem("gameResults") || "[]")
+  );
 
   const contextValue: ContextValue = {
     mode,
     setMode,
     level,
     setLevel,
-    result, 
-    setResults
+    result,
+    setResults,
+    seconds,
+    setSeconds,
   };
 
   return (
     <UserContext.Provider value={contextValue}>
       <App />
-      <div id="modal-root"></div>
+      <GlobalStyles />
+      <div id="modal-root" />
     </UserContext.Provider>
   );
 };

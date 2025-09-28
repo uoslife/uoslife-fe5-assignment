@@ -7,25 +7,26 @@ const StyledRight = styled.ul`
   list-style: none;
   margin-left: auto;
   display: flex;
-  gap:30px;
+  gap: 30px;
   padding-right: 30px;
   align-items: center;
-`
-
-const TimeBlock = styled.div`
-min-width: 200px;
 `;
 
-interface RightMenuProps {
-  seconds: number;
-  handleChangeLv: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-}
+const TimeBlock = styled.div`
+  min-width: 200px;
+`;
 
-const RightMenu: React.FC<RightMenuProps> = ({
-  seconds,
-  handleChangeLv,
-}) => {
-    const { level } = useContext(UserContext);
+const RightMenu = () => {
+  const { level, setLevel, seconds } = useContext(UserContext);
+  const handleChangeLv = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    if (e.target.value === "Lv1") {
+      setLevel("Lv1");
+    } else if (e.target.value === "Lv2") {
+      setLevel("Lv2");
+    } else if (e.target.value === "Lv3") {
+      setLevel("Lv3");
+    }
+  };
   return (
     <StyledRight>
       <li>

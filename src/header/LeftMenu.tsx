@@ -10,11 +10,9 @@ const StyledLeft = styled.ul`
   align-items: center;
 `;
 
-interface LeftMenuProps {
-  setResults: (results: any[]) => void;
-}
+interface LeftMenuProps {}
 
-export const LeftMenu: React.FC<LeftMenuProps> = ({ setResults }) => {
+export const LeftMenu: React.FC<LeftMenuProps> = () => {
   const { setMode } = useContext(UserContext);
 
   return (
@@ -27,7 +25,6 @@ export const LeftMenu: React.FC<LeftMenuProps> = ({ setResults }) => {
         <button
           onClick={() => {
             setMode(1);
-            setResults(JSON.parse(localStorage.getItem("gameResults") || "[]"));
           }}
         >
           랭킹
