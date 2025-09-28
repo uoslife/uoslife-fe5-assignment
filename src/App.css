@@ -2,17 +2,3 @@
   width: 100%;
   text-align: center;
 }
-
-
-button:active {
-  background-color: aliceblue; /* 투명도를 줘서 깜빡이는 느낌 */
-
-
-}
-
-
-.ranktable th, .ranktable td{
-  border: 1px solid black; /* 모든 셀에 1px 검은색 실선 적용 */
-  padding: 8px;
-}
-

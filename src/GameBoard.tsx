@@ -26,7 +26,6 @@ const GameButton = styled.button`
   width: 100%;
   height: 100%;
   transition: all 0.1s ease-in-out;
-  background-color: rgb(188, 188, 245);
   :active {
   background-color: aliceblue; /* 투명도를 줘서 깜빡이는 느낌 */
 }
@@ -57,7 +56,7 @@ const GameBoard: React.FC<GameBoardProps> = ({
                           ? "clicked-once"
                           : clickCount[idx] === 2
                           ? "clicked-twice"
-                          : ""
+                          : "clicked-none"
                       }
                     >
                       {numbers1[idx]}
