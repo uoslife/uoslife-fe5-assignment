@@ -31,6 +31,14 @@ const GameButton = styled.button<GameButtonProps>`
     }
     return "rgb(188, 188, 245)";
   }};
+  color: ${(props) => {
+    if (props.clickCount === 2) {
+      return "rgb(255, 255, 255)";
+    } else {
+      return "black";
+    }
+  }};
+
   flex: 1;
   border: 1px solid black;
   text-align: center;
@@ -53,6 +61,18 @@ const GameButton = styled.button<GameButtonProps>`
 const GameBoard = ({}) => {
   const { level, setResults, seconds, setSeconds } = useContext(UserContext);
   const row = level === "Lv1" ? 3 : level === "Lv2" ? 4 : 5;
+  const [numbers1, setNumbers1] = useState<(number | null)[]>([]);
+  const [numbers2, setNumbers2] = useState<number[]>([]);
+  const [index, setIndex] = useState(0); // 현재 눌러야 되는 번호-1
+  const intervalRef = useRef<number | null>(null); //현재 게임 시간
+  const [clickCount, setClickCount] = useState<number[]>(
+    Array(row * row).fill(0)
+  );
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const closeModal = () => setIsModalOpen(false);
+  const openModal = () => setIsModalOpen(true);
+
   const getRandomNumbers = (row: number): [number[], number[]] => {
     const count = row * row;
     const arr1 = Array.from({ length: count }, (_, i) => i + 1);
@@ -67,24 +87,19 @@ const GameBoard = ({}) => {
     }
     return shuffled;
   };
-  const [date, setDate] = useState<string>("");
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const closeModal = () => setIsModalOpen(false);
-  const openModal = () => setIsModalOpen(true);
-  const [numbers1, setNumbers1] = useState<(number | null)[]>([]);
-  const [numbers2, setNumbers2] = useState<number[]>([]);
-  const [index, setIndex] = useState(0);
-  const [clickCount, setClickCount] = useState<number[]>(
-    Array(row * row).fill(0)
-  );
-  const intervalRef = useRef<number | null>(null); //현재 게임 시간
-  function clickCountPlus(idx: number) {
-    const prev = clickCount;
-    const newCounts = [...prev];
-    newCounts[idx] = prev[idx] + 1;
-    setClickCount(newCounts);
-  }
+  useEffect(() => {
+    gameinit();
+    return () => stopTimer();
+  }, [level]);
+
+  const gameinit = () => {
+    const [arr1, arr2] = getRandomNumbers(row);
+    setNumbers1(arr1);
+    setNumbers2(arr2);
+    setClickCount(Array(row * row).fill(0));
+  };
+
   const startTimer = () => {
     if (intervalRef.current !== null) return;
 
@@ -104,33 +119,29 @@ const GameBoard = ({}) => {
     setIndex(0);
     setSeconds(0);
   };
-  useEffect(() => {
-    const [arr1, arr2] = getRandomNumbers(row);
-    setNumbers1(arr1);
-    setNumbers2(arr2);
-    setClickCount(Array(row * row).fill(0));
-    return () => stopTimer();
-  }, [level]);
+  function clickCountPlus(idx: number) {
+    //버튼마다 눌러진 횟수 증가
+    const prev = clickCount;
+    const newCounts = [...prev];
+    newCounts[idx] = prev[idx] + 1;
+    setClickCount(newCounts);
+  }
 
-  const buttonHandler = (idx: number) => {
-    
-    if (index == 0 && numbers1[idx] == index + 1) {
-      // 게임 진행중이 아님
-      setIndex((prevIndex) => prevIndex + 1);
-      startTimer();
-      const newNumbers = [...numbers1]; // 기존 배열 복사
-      newNumbers[idx] = numbers2[idx]; // 수정
-      setNumbers1(newNumbers); // 상태 업데이트
-      clickCountPlus(idx);
+  const updateNumbers = (idx: number) => {
+    const newNumbers = [...numbers1]; // 기존 배열 복사
+    newNumbers[idx] = numbers2[idx]; // 수정
+    setNumbers1(newNumbers); // 상태 업데이트
+  };
+
+  const buttonHandler = (idx: number) => { //메인 로직
+    if (numbers1[idx] != index + 1) {
+      return;
     }
-
-    // 게임 진행중이 맞음
-    else if (numbers1[idx] === row * row * 2) {
+    if (index + 1 == row * row * 2) {
       // 종료조건 먼저 검사
       // 종료조건
       stopTimer();
-      const dateNum = new Date(Date.now());
-      const formatted = dateNum.toLocaleString("ko-KR", {
+      const formatted = new Date(Date.now()).toLocaleString("ko-KR", {
         year: "numeric",
         month: "2-digit",
         day: "2-digit",
@@ -138,9 +149,8 @@ const GameBoard = ({}) => {
         minute: "2-digit",
         hour12: false,
       });
-      setDate(formatted);
       const gameData = {
-        time: date.toString(),
+        time: formatted.toString(),
         score: seconds,
         level: row - 2,
       };
@@ -148,27 +158,16 @@ const GameBoard = ({}) => {
 
       openModal();
       //alert(`점수: ${gameData.score}, 레벨: ${gameData.Lv}`);
-      const [arr1, arr2] = getRandomNumbers(row);
-      setNumbers1(arr1);
-      setNumbers2(arr2);
-      setClickCount(Array(row * row).fill(0));
+      gameinit();
       setResults(JSON.parse(localStorage.getItem("gameResults") || "[]"));
-    } else if (numbers1[idx] === index + 1) {
-      if (numbers1[idx] != numbers2[idx]) {
-        const newNumbers = [...numbers1]; // 기존 배열 복사
-        newNumbers[idx] = numbers2[idx]; // 수정
-        setNumbers1(newNumbers); // 상태 업데이트
-
-        clickCountPlus(idx);
-      } else if (numbers1[idx] === numbers2[idx]) {
-        const newNumbers = [...numbers1]; // 기존 배열 복사
-        newNumbers[idx] = null; // 수정
-        setNumbers1(newNumbers);
-
-        clickCountPlus(idx);
-      }
-      setIndex((prevIndex) => prevIndex + 1);
+      return;
+    } else if (index == 0) {
+      // 게임 진행중이 아님
+      startTimer();
     }
+    updateNumbers(idx);
+    clickCountPlus(idx);
+    setIndex((prevIndex) => prevIndex + 1);
   };
 
   const loadData = () => {
