@@ -42,6 +42,7 @@ const NavItem = styled(NavLink)`
     }
 `
 const ChildrenWrapper = styled.div`
+    gap: ${({ theme }) => theme.spacing.xl};
     margin-left: auto;
     display: flex;
     align-items: center;
