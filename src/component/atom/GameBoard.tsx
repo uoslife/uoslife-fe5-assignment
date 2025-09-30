@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { useRef, useState, useEffect, useContext } from "react";
-import UserContext from "./userContext";
-import Modal from "./Modal";
+import UserContext from "../../userContext";
+import Modal from "../../Modal";
 
 interface GameButtonProps {
   clickCount: number;

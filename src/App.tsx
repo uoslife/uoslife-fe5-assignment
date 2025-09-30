@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { useContext } from "react";
-import Header from "./header/Header";
+import Header from "./component/header/Header";
 import UserContext from "./userContext";
-import Ranking from "./ranking";
-import GameBoard from "./GameBoard";
+import Ranking from "./component/atom/ranking";
+import GameBoard from "./component/atom/GameBoard";
 
 function App() {
   const { mode } = useContext(UserContext);
