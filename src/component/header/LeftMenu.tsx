@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import UserContext from "../../userContext";
+import UserContext from "../../context/userContext";
 import { useContext } from "react";
 
 const StyledLeft = styled.ul`

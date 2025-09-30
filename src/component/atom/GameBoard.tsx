@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { useRef, useState, useEffect, useContext } from "react";
-import UserContext from "../../userContext";
+import UserContext from "../../context/userContext";
 import Modal from "../../Modal";
 
 interface GameButtonProps {

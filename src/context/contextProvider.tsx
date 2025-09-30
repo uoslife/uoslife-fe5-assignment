@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import App from "./App";
+import App from "../App";
 import UserContext from "./userContext";
-import GlobalStyles from "./globalStyle";
+import GlobalStyles from "../globalStyle";
 
 interface GameData {
   time: string;
@@ -21,7 +21,7 @@ interface ContextValue {
   setSeconds: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const AppWrapper: React.FC = () => {
+const ContextProvider: React.FC = () => {
   const [seconds, setSeconds] = useState(0);
   const [mode, setMode] = useState<number>(0);
   const [level, setLevel] = useState<string>("Lv1");
@@ -49,4 +49,4 @@ const AppWrapper: React.FC = () => {
   );
 };
 
-export default AppWrapper;
+export default ContextProvider;
