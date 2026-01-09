@@ -1,42 +1,53 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.app {
+  width: 100vw;
+  min-height: 100vh;
+  
+  font-family: sans-serif;
+}
+
+/* 헤더 */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  
+  height: 80px;
+  padding: 0 50px;
+  gap: 80px;
+
+  color: white;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  font-size: 20px;
+  font-weight: 700;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav {
+  display: flex;
+  gap: 60px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* 홈 배너 */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.card {
-  padding: 2em;
+.homeBanner {
+  height: 500px;
+
+  background-size: cover;
+  background-position: center 50%;
+  background-repeat: no-repeat;
 }
 
-.read-the-docs {
-  color: #888;
+/* 배너 박스 */
+.banner-box {
+  background: black;
+  padding: 16px;
 }
