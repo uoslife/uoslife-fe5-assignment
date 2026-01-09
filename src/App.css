@@ -62,7 +62,7 @@
 }
 
 .homeBanner {
-  height: 500px;
+  height: 600px;
 
   background-size: cover;
   background-position: center 50%;
@@ -70,7 +70,42 @@
 }
 
 /* 배너 박스 */
-.banner-box {
-  background: black;
-  padding: 16px;
+.bannerBox {
+  padding: 10px 30px;
+}
+
+.bannerBoxHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 10px; 
+}
+
+.bannerTitle {
+  margin: 0; 
+  font-size: 18px;
+  font-weight: 800;
+  color: white;
+}
+
+.bannerViewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+
+  scroll-snap-type: x mandatory; 
+}
+
+.bannerTrack {
+  display: flex;
+  gap: 15px;
+}
+
+.bannerItem {
+  flex: 0 0 auto;
+  width: 180px;
+  height: 180px;
+  background: white;
+
+  scroll-snap-align: start; 
 }
