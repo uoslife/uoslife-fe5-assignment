@@ -1,17 +1,17 @@
 import styled from '@emotion/styled';
 
 interface FlexProps {
-  justifyContent:
+  justifyContent?:
     | 'flex-start'
     | 'flex-end'
     | 'center'
     | 'space-between'
     | 'space-around'
     | 'space-evenly';
-  alignItems: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
-  flexWrap: 'nowrap' | 'wrap' | 'wrap-reverse';
-  gap: string;
-  flex: string;
+  alignItems?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
+  flexWrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
+  gap?: string;
+  flex?: string;
 }
 
 const Flex = styled.div<FlexProps>`
