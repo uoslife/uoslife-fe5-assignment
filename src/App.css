@@ -1,42 +1,235 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.app {
+  width: 100vw;
+  min-height: 100vh;
+  
+  font-family: sans-serif;
+
+  background-color: #FFDDE5;
+}
+
+/* 헤더 */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+  height: 80px;
+  width: 100%;
+  padding: 0 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  color: white;
+
+  z-index: 1000;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.headerRight img {
+  width: 22px;
+  height: 22px;
+
+  filter: brightness(0) invert(1);
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  font-size: 20px;
+  font-weight: 700;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav {
+  display: flex;
+  gap: 60px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* 홈 배너 */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
-.card {
-  padding: 2em;
+.homeBanner {
+  position: relative;
+  height: 600px;
+
+  background-size: cover;
+  background-position: center 50%;
+  background-repeat: no-repeat;
 }
 
-.read-the-docs {
-  color: #888;
+.homeBannerContent {
+  position: absolute;
+  right: 30px;
+  bottom: 60px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+
+  color: #5D4249;
+}
+
+.homeBannerTitle {
+  margin: 0;
+  font-size: 50px;
+  font-weight: 800;
+
+  color: #FFDDE5;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.homeBannerButton {
+  padding: 10px 70px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+
+  border: none;
+  border-radius: 10px;
+  background: #FFDDE5;
+  color: black;
+  cursor: pointer;
+}
+
+.homeBannerButton:hover {
+  background: #5D4249;
+  color: white;
+}
+
+.homeBannerButton:hover .shortcutIcon {
+  filter: brightness(0) invert(1);
+}
+
+.shortcutIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/* 배너 박스 */
+.bannerBox {
+  padding: 10px 30px;
+  margin-bottom: 20px;
+}
+
+.bannerBoxHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 10px; 
+}
+
+.bannerTitle {
+  margin: 0; 
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+
+.bannerViewport {
+  position: relative;
+  overflow-y: hidden;
+}
+
+.bannerScroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 12px;
+}
+
+.bannerTrack {
+  display: flex;
+  gap: 15px;
+}
+
+.bannerItem {
+  flex: 0 0 auto;
+  width: 180px;
+  height: 180px;
+  scroll-snap-align: start; 
+  overflow: hidden;
+
+  background: white;
+}
+
+.bannerImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  transition: transform 0.3s ease;  
+  will-change: transform; 
+}
+
+.infiniteViewport .bannerItem:hover .bannerImg {
+  transform: scale(1.2);
+}
+
+.infiniteViewport {
+  overflow: hidden;
+  scroll-snap-type: none;  
+}
+
+.infiniteTrack {
+  gap: 0;
+  /* 한 바퀴 18초, 일정한 속도, 영원히 */
+  animation: infinite-slide 8s linear infinite;
+  width: max-content;
+}
+
+.infiniteTrack .bannerItem {
+  margin-right: 15px;
+}
+
+/* 원본 7장 + 복사본 7장 */
+@keyframes infinite-slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.bannerArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  z-index: 10; 
+
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  cursor: pointer;
+
+  font-size: 24px;
+}
+
+.bannerArrowLeft {
+  left: 10px;
+}
+
+.bannerArrowRight {
+  right: 10px;
 }
