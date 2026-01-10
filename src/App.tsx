@@ -1,5 +1,5 @@
 import './App.css'
-import bgImage from './assets/bg.JPG'
+import bgImage from './assets/bg.jpg'
 
 import { Header } from './components/layout/Header'
 import { HomeBanner } from './components/sections/HomeBanner'
