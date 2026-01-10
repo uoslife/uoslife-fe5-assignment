@@ -23,6 +23,8 @@
   box-sizing: border-box;
 
   color: white;
+
+  z-index: 1000;
 }
 
 .headerLeft {
@@ -62,11 +64,65 @@
 }
 
 .homeBanner {
+  position: relative;
   height: 600px;
 
   background-size: cover;
   background-position: center 50%;
   background-repeat: no-repeat;
+}
+
+.homeBannerContent {
+  position: absolute;
+  right: 30px;
+  bottom: 60px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+
+  color: #5D4249;
+}
+
+.homeBannerTitle {
+  margin: 0;
+  font-size: 50px;
+  font-weight: 800;
+
+  color: #FFDDE5;
+  -webkit-text-stroke: 1px rgba(93, 66, 73, 0.7);
+}
+
+.homeBannerButton {
+  padding: 10px 70px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+
+  border: none;
+  border-radius: 10px;
+  background: #FFDDE5;
+  color: black;
+  cursor: pointer;
+}
+
+.homeBannerButton:hover {
+  background: #5D4249;
+  color: white;
+}
+
+.homeBannerButton:hover .shortcutIcon {
+  filter: brightness(0) invert(1);
+}
+
+.shortcutIcon {
+  width: 20px;
+  height: 20px;
 }
 
 /* 배너 박스 */
