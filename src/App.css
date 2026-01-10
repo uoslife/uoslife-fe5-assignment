@@ -173,3 +173,25 @@
   object-fit: cover;
   display: block;
 }
+
+.infiniteViewport {
+  overflow: hidden;
+  scroll-snap-type: none;  
+}
+
+.infiniteTrack {
+  gap: 0;
+  /* 한 바퀴 18초, 일정한 속도, 영원히 */
+  animation: infinite-slide 8s linear infinite;
+  width: max-content;
+}
+
+.infiniteTrack .bannerItem {
+  margin-right: 15px;
+}
+
+/* 원본 7장 + 복사본 7장 */
+@keyframes infinite-slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
