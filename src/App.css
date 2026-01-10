@@ -172,6 +172,13 @@
   height: 100%;
   object-fit: cover;
   display: block;
+
+  transition: transform 0.3s ease;  
+  will-change: transform; 
+}
+
+.bannerItem:hover .bannerImg {
+  transform: scale(1.2);
 }
 
 .infiniteViewport {
