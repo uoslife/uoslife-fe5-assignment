@@ -1,23 +1,19 @@
-import { useState } from 'react'
-import Logo from './assets/app_icon.png'
-import './App.css'
+import { ThemeProvider } from '@emotion/react';
+import { theme } from './styles/theme';
+import Header from './components/layout/Header';
+import HomeBanner from './components/HomeBanner';
+import InfiniteBannerSection from './components/InfiniteBannerSection';
+import SliderSection from './components/SliderSection';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-          <img src={Logo} className="logo" alt="app logo" />
-      </div>
-      <h1>5기 프론트 시대생 onboarding ✈️</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-    </>
-  )
+    <ThemeProvider theme={theme}>
+      <Header />
+      <HomeBanner />
+      <InfiniteBannerSection />
+      <SliderSection />
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
