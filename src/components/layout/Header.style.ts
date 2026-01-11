@@ -20,9 +20,10 @@ export const NavButton = styled.button`
   border-radius: 8px;
   color: ${({ theme }) => theme.colors.text};
   font-weight: 500;
+  font-size: ${({ theme }) => theme.spacing.md};
 
   &.active {
-    background-color: #122e4d; /* 테마 색상 사용 권장 */
+    background-color: ${({ theme }) => theme.colors.backgroundDark};
     color: white;
     font-weight: bold;
   }

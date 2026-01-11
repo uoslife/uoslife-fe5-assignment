@@ -2,6 +2,7 @@ export const theme = {
   colors: {
     background: '#3f71a2',
     text: '#fff',
+    backgroundDark: '#122e4d',
   },
   spacing: {
     sm: '0.75rem',
