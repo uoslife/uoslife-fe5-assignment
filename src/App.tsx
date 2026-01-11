@@ -7,6 +7,7 @@ import type { TabType } from './types';
 import GamePage from './components/page/GamePage';
 import Modal from './components/common/Modal';
 import { formatDateTime } from './utils';
+import RankingPage from './components/page/RankingPage';
 
 function App() {
   const [currentTab, setCurrentTab] = useState<TabType>('GAME');
@@ -31,6 +32,7 @@ function App() {
         <GamePage gameState={gameState} onClickNumber={clickNumber} />
       )}
 
+      {currentTab === 'RANKING' && <RankingPage />}
       {gameState.endTime !== null && gameState.startTime !== null && (
         <Modal onClose={resetGame}>
           <h2>오호 좀 하시는데요 ~~</h2>
