@@ -12,8 +12,8 @@ export default function Header() {
         <h2>UOSLIFE FE</h2>
         <Flex>
           <LinkStyle href="/">홈</LinkStyle>
-          <LinkStyle href="#">메뉴1</LinkStyle>
-          <LinkStyle href="#">메뉴2</LinkStyle>
+          <LinkStyle href="#infinite-banner">메뉴1</LinkStyle>
+          <LinkStyle href="#scrollzone-view">메뉴2</LinkStyle>
         </Flex>
       </Flex>
       <Flex gap="2rem">

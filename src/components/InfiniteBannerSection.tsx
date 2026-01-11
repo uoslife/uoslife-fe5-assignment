@@ -21,7 +21,7 @@ const BannerImage = styled.img`
 
 export default function InfiniteBannerSection() {
   return (
-    <SectionWrapper>
+    <SectionWrapper id="infinite-banner">
       <SectionTitle>무한배너 section</SectionTitle>
       <InfiniteBanner>
         {Array.from({ length: 10 }).map((_, idx) => (

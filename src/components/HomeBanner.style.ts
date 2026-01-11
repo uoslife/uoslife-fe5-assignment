@@ -25,7 +25,7 @@ export const HomeBannerTitle = styled.h1`
   font-size: 3rem;
 `;
 
-export const HomeBannerButton = styled.button`
+export const HomeBannerButton = styled.a`
   display: flex;
   background-color: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
@@ -33,4 +33,11 @@ export const HomeBannerButton = styled.button`
   align-items: center;
   padding: ${({ theme }) => `${theme.spacing.sm} ${theme.spacing['2xl']}`};
   border-radius: ${({ theme }) => theme.spacing.sm};
+
+  &:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+    color: #000000;
+  }
 `;

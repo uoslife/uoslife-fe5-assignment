@@ -18,7 +18,7 @@ const BannerImage = styled.img`
 
 export default function SliderSection() {
   return (
-    <SectionWrapper>
+    <SectionWrapper id="scrollzone-view">
       <SectionTitle>스크롤뷰 zone</SectionTitle>
 
       <Slider>

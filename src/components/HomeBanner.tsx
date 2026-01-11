@@ -10,7 +10,9 @@ export default function HomeBanner() {
     <HomeBannerWrapper>
       <HomeContentSection>
         <HomeBannerTitle>시대생 프론트 아자아자🌊</HomeBannerTitle>
-        <HomeBannerButton>→ 바로가기</HomeBannerButton>
+        <HomeBannerButton href="https://github.com/uoslife/uoslife-client">
+          → 바로가기
+        </HomeBannerButton>
       </HomeContentSection>
     </HomeBannerWrapper>
   );
