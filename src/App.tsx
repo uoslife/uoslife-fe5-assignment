@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Header from './components/Header'
+import GameScreen from './screens/GameScreen'
 import type { Tab, Level } from './types'
 
 function App() {
@@ -19,10 +20,8 @@ function App() {
       />
 
       <main className="main">
-        {activeTab === 'game' ? (
-          <div>게임 화면</div>
-        ) : (
-          <div>랭킹 화면</div>
+        {activeTab === 'game' && (
+          <GameScreen level={level} />
         )}
       </main>
     </>

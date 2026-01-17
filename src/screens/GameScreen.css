@@ -1,0 +1,38 @@
+.game-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.mission {
+    margin: 25px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.mission-number {
+    margin-left: 6px;
+    font-size: 18px;
+}
+
+.board {
+    display: grid;
+    gap: 12px;
+}
+
+.cell {
+    width: 80px;
+    height: 80px;
+    background-color: #1e88e5;
+    color: white;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
