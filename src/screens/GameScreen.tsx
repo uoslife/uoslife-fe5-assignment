@@ -4,13 +4,14 @@ import type { Level } from '../types'
 
 type GameScreenProps = {
     level: Level
+    onGameStart: () => void
 }
 
 function shuffle(array: number[]) {
     return [...array].sort(() => Math.random() - 0.5)
 }
 
-function GameScreen({ level }: GameScreenProps) {
+function GameScreen({ level, onGameStart }: GameScreenProps) {
     const sizeMap: Record<Level, number> = {
         1: 3,
         2: 4,
@@ -60,6 +61,10 @@ function GameScreen({ level }: GameScreenProps) {
         if(value !== nextNumber){
             flashWrong(index)
             return
+        }
+
+        if(nextNumber === 1){
+            onGameStart()
         }
 
         setCorrectFlags((prev) => {
