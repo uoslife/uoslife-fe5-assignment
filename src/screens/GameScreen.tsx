@@ -163,7 +163,10 @@ function GameScreen({ level, onGameStart, onGameEnd, onExitToHome }: GameScreenP
     return (
         <div className="game-screen">
             <div className="mission">
-                다음 숫자 <span className="mission-number">{nextNumber}</span>
+                다음 숫자{' '}
+                <span className="mission-quote">"</span>
+                <span className="mission-number">{nextNumber}</span>
+                <span className="mission-quote">"</span>
             </div>
 
             <div

@@ -12,8 +12,13 @@
 }
 
 .mission-number {
-    margin-left: 6px;
-    font-size: 18px;
+    color: #0b5ed7;
+    font-size: 20px;
+}
+
+.mission-quote {
+    color: #1e6bff;
+    font-size: 20px;
 }
 
 .board {
