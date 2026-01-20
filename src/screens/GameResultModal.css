@@ -1,0 +1,55 @@
+.grm-backdrop{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index: 9999;
+}
+
+.grm-modal{
+    width: min(420px, calc(100% - 32px));
+    background: #fff;
+    border-radius: 16px;
+    padding: 18px 18px 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+
+.grm-title{
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.grm-info{
+    display:flex;
+    flex-direction:column;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.grm-row{
+    display:flex;
+    justify-content:space-between;
+    gap: 12px;
+}
+
+.grm-label{
+    color: #666;
+}
+
+.grm-value{
+    font-weight: 600;
+}
+
+.grm-retry{
+    width: 100%;
+    height: 44px;
+    border: 0;
+    border-radius: 12px;
+    background: #111;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}

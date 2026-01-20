@@ -11,6 +11,8 @@ function App() {
   const [timeMs, setTimeMs] = useState<number>(0)
   const [isRunning, setIsRunning] = useState(false)
 
+  const [gameKey, setGameKey] = useState(0)
+
   const timerRef = useRef<number | null>(null)
 
   useEffect(() => {
@@ -31,15 +33,25 @@ function App() {
     }, [isRunning])
 
     const startTimer = () => {
-        if (isRunning) return
-        setTimeMs(0)
-        setIsRunning(true)
+      if (isRunning) return
+      setTimeMs(0)
+      setIsRunning(true)
+    }
+
+    const resetTimer = () => {
+      setIsRunning(false)
+      setTimeMs(0)
+    }
+
+    const restartGame = () => {
+      setIsRunning(false)
+      setTimeMs(0)
+      setGameKey((k) => k+1)
     }
 
     const resetGame = (nextLevel: Level) => {
         setLevel(nextLevel)
-        setIsRunning(false)
-        setTimeMs(0)
+        restartGame()
     }
 
   return (
@@ -54,8 +66,11 @@ function App() {
 
       {activeTab === 'game' && (
         <GameScreen
-            level={level}
-            onGameStart={startTimer}
+          key={gameKey}
+          level={level}
+          onGameStart={startTimer}
+          onGameEnd={resetTimer}
+          onExitToHome={restartGame}
         />
       )}
     </>
