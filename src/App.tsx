@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import Header from './components/Header'
 import GameScreen from './screens/GameScreen'
+import RankingScreen from './screens/RankingScreen'
 import type { Tab, Level } from './types'
 
 function App() {
@@ -73,6 +74,8 @@ function App() {
           onExitToHome={restartGame}
         />
       )}
+
+      {activeTab === 'ranking' && <RankingScreen />}
     </>
   )
 }

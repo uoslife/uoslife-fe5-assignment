@@ -48,8 +48,13 @@
     height: 44px;
     border: 0;
     border-radius: 12px;
-    background: #111;
-    color: #fff;
     font-weight: 700;
     cursor: pointer;
+
+    background: #111;
+    color: #fff;
+}
+
+.grm-retry:hover{
+    opacity: 0.7;
 }
